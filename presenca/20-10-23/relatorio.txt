@@ -1,0 +1,14 @@
+20 de outubro de 2023.
+
+No atendimento de hoje, os alunos não tinham nenhuma dúvida em especial.
+Perguntei se eles sabiam ponteiros, disseram que não, então apresentei a eles. 
+
+Falamos sobre o que é um ponteiro, como declarar um ponteiro, sobre os
+operadores * e &, sobre por que utilizar ponteiros e fiz  uma função
+"adiciona1", que recebe o endereço de uma variável e adiciona 1 em seu valor,
+para exemplificar, e os alunos fizeram uma função "troca", que troca o valor de
+duas variáveis, utilizando os ponteiros. 
+
+Percebi que os alunos tiveram um entendimento satisfatório sobre o tema.
+
+Lucas Vinícius de Lima Assis

@@ -1,0 +1,110 @@
+\documentclass[a4paper]{article}
+
+\usepackage[brazil]{babel}
+\usepackage{ulem, hyperref, verbatim, tcolorbox, indentfirst}
+
+\hypersetup{
+	colorlinks=true,
+	urlcolor=blue
+}
+\urlstyle{same}
+
+\author{Lucas Vinícius de Lima Assis}
+
+\title{Guia de Estudos \\ Práticas com EDs}
+
+\begin{document}
+    \maketitle
+    \begin{center}
+        \textbf{Considerações iniciais}
+    \end{center}
+
+    \textit{``Este é um pequeno guia sobre prática com algumas estruturas de dados.
+        Como o último Guia de Estudos foi sobre os \emph{pré-requisitos} para se
+    trabalhar com estruturas de dados (Ponteiros, malloc e structs), neste guia
+    eu trago algumas plataformas que vocês podem usar para encontrar questões,
+    sempre procurando dar a vocês os materiais para terem independência no seu
+    aprendizado.}   
+
+    \textit{Já adianto, recomendo que implementem, no mínimo uma vez, uma lista
+    encadeada, duplamente encadeada, circular, tratem como uma pilha, e depois
+    como uma fila, e façam no mínimo as operações básicas:
+    adicionar no começo, no final, printar todos os elementos, busca de
+    elementos. Essas são operações básicas.} 
+
+    \textit{Parece muito, mas vocês vão ver que é tranquilo, exemplo: entre uma
+    pilha e uma fila, a única diferença é a inserção e retirada, a busca é igual
+    à da lista encadeada, não precisa repetir.}
+
+    \textit{Fazer as operações ao menos uma vez ativa teu cérebro para essa nova maneira
+    de pensar usando ponteiros."}
+    \begin{flushright}
+        \textit{-O Monitor}
+    \end{flushright}
+
+    \section*{Beecrowd}
+    O \href{https://www.beecrowd.com.br/}{Beecrowd} é um site de
+    \emph{programação competitiva}. Ele contém um banco de questões enorme. A
+    melhor parte é que o próprio site verifica se sua resposta está correta,
+    passando seu código por centenas de casos de testes.
+    
+    Sugiro então que criem uma conta \textit{(já aviso que é chatinho, mas tenham
+    animo)} e vão na aba \emph{Problems}$\to$\emph{Structs} que vão encontrar
+    problemas sobre \emph{estruturas de dados}. Aqui estão 4 problemas que
+    separei:
+
+    \begin{itemize}
+        \item \href{https://www.beecrowd.com.br/judge/en/problems/view/1068}{Parenthesis Balance I}
+        \item \href{https://www.beecrowd.com.br/judge/en/problems/view/1069}{Diamonds
+            and Sand}
+        \item
+            \href{https://www.beecrowd.com.br/judge/en/problems/view/1077}{Infix
+            Postfix}
+        \item
+            \href{https://www.beecrowd.com.br/judge/en/problems/view/1083}{LEXSIM
+            - Sintatic and Lexical Avaliator}
+    \end{itemize}
+
+    Uma vantagem desse tipo de questão é que as perguntas são abertas, vocês
+    podem resolver de diversas maneiras, e vocês que devem avaliar qual
+    estrutura de dados utilizar, ou até mesmo, se realmente precisam utilizar
+    alguma.
+
+    Pessoalmente, quando eu resolvo os exercícios no beecrowd, muitas vezes eu
+    opto por implementações mais simples das estruturas de dados, porque eles me
+    dão um problema pontual, e não um software que pode expandir e, então,
+    requer o código mais genérico possível. Assim, recomendo que se resolverem
+    de uma maneira mais, digamos, \textit{`sagaz'}, se desafiem a resolver com uma
+    implementação clássica, e ver a diferença de performance entre as duas
+    soluções.
+    % \newpage{}
+    \section*{Sugestões Materiais Externos}
+    Sugiro que procurem também materiais pela internet mais \emph{específicos} sobre o
+    conteúdo. O Instituto de Computação (IC) da Unicamp possui diversos
+    materiais sobre o assunto, estudei por lá a parte de listas encadeadas.  A
+    seguinte questão foi retirada do
+    \href{https://www.ic.unicamp.br/~thelma/gradu/MC102/Turma-2008S2/Listas-exercicios/Lista6_exerc.pdf}{Material
+    da professora Thelma Chiossi}. 
+
+    \paragraph{Subdividir uma \textit{Linked List}\\}
+    Considere a implementação:
+
+    \begin{tcolorbox}
+        \begin{verbatim}
+typedef struct lista{
+    int info;
+    struct lista *prox;
+}Lista;
+        \end{verbatim}
+    \end{tcolorbox}
+    Escreva uma função que receba, como parâmetros, uma lista e um número inteiro n,
+e divida a lista em duas, de forma que a segunda lista comece no primeiro nó logo
+após a ocorrência de n na lista original. A função deve retornar um ponteiro para a
+segunda subdivisão da lista original, enquanto L (cabeça da lista original) deve
+continuar apontando para o primeiro elemento da primeira subdivisão da lista.
+
+    \textit{ Depois deem uma olhada e tentem fazer as outras questões, vai que você
+    encontra algo que parece difícil lá. Também sugiro que procurem materiais
+    sobre outras estruturas de dados.}
+\end{document}
+

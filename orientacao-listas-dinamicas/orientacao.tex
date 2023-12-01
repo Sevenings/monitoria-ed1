@@ -1,0 +1,85 @@
+\documentclass[a4paper]{article}
+
+\usepackage[brazil]{babel}
+\usepackage{ulem}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{tcolorbox}
+
+\hypersetup{
+	colorlinks=true,
+	urlcolor=blue
+}
+\urlstyle{same}
+
+% \href{https://github.com/Sevenings/Projeto-Final-Lia}{Repositório do Projeto}
+
+\author{Lucas Vinícius de Lima Assis}
+
+\title{Guia de Estudos \\ Listas Dinâmicas}
+
+\begin{document}
+    \maketitle
+    
+
+    
+    \textit{Este é um pequeno guia sobre as bases a se estudar para começar a
+    implementar estruturas de dados em C. Para se implementar a mais básica, a
+    Lista Encadeada, é necessário saber fazer uma \uline{Alocação Dinâmica}, criar
+    \uline{Structs} e usar \uline{Ponteiros}.}
+
+    \textit{Este é apenas um guia de estudos, e todo o conhecimento teórico já está
+    disponível em bons livros. Recomendo que usem o}
+    \href{https://www.inf.ufpr.br/lesoliveira/download/c-completo-total.pdf}{C
+    Completo Total}. \textit{Vão encontrar até mais coisas do que buscavam
+        inicialmente.}
+
+    \textit{Conseguindo fazer esses exercícios básicos creio que possuam tudo o que é
+    preciso para implementar as estruturas de dados. No entanto, não se limitem
+    a este mero guia.}
+
+    \section*{Ponteiros}
+
+    Este é um código em C que troca os valores de duas variáveis utilizando uma
+    função de troca. No entanto, a função foi apagada. Utilize o conhecimento
+    sobre ponteiros e seus operadores \& e * para reescrever uma função de troca
+    funcional. 
+
+    \begin{tcolorbox}
+        \verbatiminput{programa_troca.c}
+    \end{tcolorbox}
+
+    Note que a função \verb|void troca(int* a, int* b)| recebe ponteiros como
+    parâmetros. Isso é realmente necessário? Seria possível fazer uma função
+    \verb|void troca(int a, int b)| que funcione? 
+
+    \section*{Malloc e Free}
+
+    Este código tem gambiarra! Embora ele funcione como o desejado, perceba que
+    estamos fazendo uma declaração de um vetor estático de maneira "dinâmica".
+    Refatore o código utilizando \verb|malloc| e \verb|free| para que a alocação
+    dinâmica seja realizada corretamente.
+
+    \begin{tcolorbox}
+        \verbatiminput{vetores_est.c}
+    \end{tcolorbox}
+
+
+    \newpage
+
+    \section*{Structs}
+
+    Recentemente, comecei a programar um jogo de Digimon em C. Decidi começar
+    simples e meus Digimons vão ter apenas \textit{vida} e \textit{dano}, todos
+    do tipo \textit{int}. Criei uma \verb|struct| para representar os Digimons,
+    e uma função \verb|NovoDigimon|. Essa função aloca
+    dinamicamente o espaço de um Digimon, atribui a vida e o dano neste espaço
+    de memória e me retorna o ponteiro deste Digimon alocado. Por algum motivo
+    eu não salvei a implementação da struct e da função e já até esqueci como
+    tinha feito. Poderia me ajudar?
+
+    \begin{tcolorbox}
+        \verbatiminput{structs_digimon.c}
+    \end{tcolorbox}
+
+\end{document}
