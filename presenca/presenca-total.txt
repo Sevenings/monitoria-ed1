@@ -1,0 +1,114 @@
+20-10-23:
+    Gabriel Sales Gerardo
+    Matheus Sousa Marinho
+
+25-10-23:
+    Diogo (remotamente)
+
+27-10-23:
+    Emilio Augusto da Mota
+    Gabriel Sales Gerardo
+    Matheus Sousa Marinho
+    Philipy Brendho
+
+10-11-23:
+    Matheus Sousa Marinho
+    Gabriel Sales Gerardo
+    Philipy Brendho
+
+17-11-23:
+    Matheus Sousa Marinho
+    Gabriel Sales Gerardo
+    Igor Barbosa
+    Gedeir Pires Soares Junior
+    Gustavo Ferreira
+
+29-11-23:
+    Higor Ferreira Silva
+    Wallyson Miranda Aguiar
+
+06-12-23:
+    Igor Barbosa
+
+07-12-23:
+    Philipy Brendho
+    Elizeu Andrade
+    Igor Barbosa
+    Gabriel Sales Gerardo
+    Gedeir Pires Soares Junior
+    Matheus Sousa Marinho
+
+    *Dia em que implementamos uma
+    lista duplamente encadeada
+    circular
+
+13-12-23:
+    Wallyson Miranda Aguiar
+
+14-12-23:
+    Gabriel Sales Gerardo
+    Emilio Augusto da Mota
+    Gedeir Pires Soares Junior
+    Alexandre Miranda Filho
+    Ana Beatriz Borges
+    Matheus Sousa Marinho
+    Philipy Brendho
+
+    *Dia em que propus implementar
+    um algorítmo de inversão de 
+    lista encadeada
+
+10-01-24:
+    Não veio ninguém
+
+11-01-24:
+    (Não foi feita chamada)
+    Gabriel Sales Gerardo
+    Emilio Augusto da Mota
+    *Dia que propus um desafio 
+    de explorar grafos 
+    utilizando Minecraft
+
+17-01-24:
+    (Não foi feita chamada)
+    Gedeir Pires Soares Junior
+    Igor Barbosa
+
+    *Tentamos implementar uma 
+    lista de adjacência e falei
+    algumas curiosidades sobre 
+    árvores binárias.
+
+18-01-24:
+    (Não foi feita chamada)
+
+24-01-24:
+    (Não foi feita chamada)
+    Gabriel Sales Gerardo
+    Emilio Augusto da Mota
+    Gedeir Pires Soares Junior
+    Igor Barbosa
+    Thiago Ferreira
+    Philipy Brendho
+    Lucas Jesus
+
+    *Propus uma série de exercícios,
+    os primeiros triviais, os últimos
+    desafios, sobre operações em grafos
+
+25-01-24:
+    (Não foi feita chamada)
+    Gabriel Sales Gerardo
+
+    *Gabriel veio estudar e 
+    quando tinha dúvidas me 
+    perguntava
+
+
+
+* Por whatsapp, houveram diversas
+procuras do Felipe, algumas sobre
+dúvidas de como resolver alguma 
+questão das listas que eu enviei,
+ou dúvidas sobre alguma implementação
+que ele estava fazendo.

@@ -1,0 +1,43 @@
+Revisão Lista:
+
+1°  Questão :  Resposta: Nesse algoritmo ele inicializa um ponteiro de No e ele recebe da função conteudo NULL; 
+
+2° Questão:  Na função B ela recebe como parametro o endereço de um ponteiro ou seja plista = &lista e cria um nó que recebe valor v e o n.prox aponta para *plista = lista e lista aponta para um nó NULL criando algo como, em resumo ela insere um nó no incio da lista:
+             plista -- > [12] -->[4]--> NULL 
+      
+             O mesmo poderia ser feito usando No* simplesmente fazendo n.prox ser igual lista para isso ele receberia na chamada funçãoB(lista, 4) retirando o termo intermediario, ao invés de ter que passar pelo endereço de lista que não
+             é realmente relevante.
+
+             1° jeito : n.prox =  *plista = lista --> [NULL];  
+             2° jeito:  n.prox = lista --> NULL ;
+             
+3° Questão : Ambas pretendem imprimir toda a lista porém Cb ela pela o passo de criar um ponteiro auxiliar para percorrer a lista, oque faz com que o ponteiro que a pontaria para o primeiro elemento da lista deixe de apontar 
+             para o primeiro elemento, fazendo coo que imprima a lista normalmente mas perdendo a lista no processo, já em Ca a lista é imprimida mas se chamada novamente o ponteiro inicial continuara apontando para o inicio da lista:
+             
+             Resultado Ca: abcdefNULL  ponteiro lista --> a  Cb: abcdefNULL  lista --> NULL
+             
+Função D: Essa função apaga toda um lista e no final o ponteiro que apontaria para o primeiro elemento se torna NULL, obs não ponta para algo que é NULL isso ele ja fazia depois que o loop apagou o primeiro elemento, o ponteiro agora 
+          é  NULL;
+          
+Função E: Cria um ponteiro que aponta para um espaço capaz de guardar um No vazio, depois da um valor a esse espaço antes vazio. Depois cria um ponteiro l e aponta para o no que é inicio de uma lista e cria um outro ponteiro e aponta para o segundo elemento dessa lista. Depois ele percorre a lista até o valor do nó para que p esteja apontado seja maior ou igual ao valor dado ao novo nó criado e então insere o novo nó criado entre l e p:
+                              l      p 
+             n [4]     lista [1] -->[2] --> [3] --> [5] --> ...
+                                     l       p
+                             [1] -->[2] --> [3] --> [5] --> ...
+                                             l       p
+                             [1] -->[2] --> [3] --> [5] --> ...
+                                             l             p
+                             [1] -->[2] --> [3] -->[4]--> [5] --> ...
+                             
+                Obs: Se a lista estiver vazia o código vai apontar um erro na linha de incialização e atribuição de p, pq ele vai estar apontando para algo que não vai existir.
+                
+Função F: A função implementa um bubblesort na lista, porém ao invés de alterar os ponteiros ela altera o conteúdo da informação dentro das celulas, garantindo que o maior elemento sempre esteja no final da lista, parando quando o t for igual a zero e não for feita nenhuma troca durante uma iteração da lista,  porém esse bubblesort ao contrario do usado com vetores não limita o ultimo elemento fazendo sua complexidade ser de n² percorrendo toda a lista n vezes. E como no algoritmo anterior se a lista estiver vazia o algoritmo apresentara um erro na linha de inicialização de b; 
+               
+Função G: A função cria uma lista de n elementos com valores aleatorios multiplos de l, eles são inseridos no inicio da fila, ou seja o ultimo nó a ser criado vai ser o incio da fila e o primeiro será o final;
+
+Função H: Essa função retorna a posição de um determinado valor pedido de dentro de uma lista, entretando apresenta um erro se o valor pedido não existir dentro da lista ele sempre retornada a ultima posição mesmo quando não for igual ao valor pedido.
+
+Função Ia: Essa função inverte a lista, precorrendo com tres ponteiros e invertendo os ponteiros no.prox das celulas. Se a lista for vazia o codigo não funciona.
+
+Função Ib: Nesse algoritmo ele inicializa uma lista e depois insere 20 elementos multiplos de 10, e depois inverte a lista como no algoritmo anterios porém esse algoritmo faz uso de recursividade no lugar de um loop while, que enquanto o ponteiro a não for NULL a função chama a si mesmma porém com a, b e c anvançando na lista.
+

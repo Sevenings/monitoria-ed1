@@ -1,0 +1,265 @@
+\documentclass[a4paper]{article}
+
+\usepackage[brazil]{babel}
+\usepackage{ulem, hyperref, verbatim, tcolorbox, indentfirst}
+
+\hypersetup{
+	colorlinks=true,
+	urlcolor=blue
+}
+\urlstyle{same}
+
+\author{Lucas Vinícius de Lima Assis\\ \small{(62) 9 9973-7345}}
+
+\title{Manipulações em \\ Listas Encadeadas }
+
+\begin{document}
+    \maketitle
+    \begin{center}
+        \textbf{Considerações iniciais}
+    \end{center}
+
+    \textit{``Este é um pequeno guia para treinar a leitura de código e revisar
+        algumas manipulações com listas encadeadas. Eu não sei as questões da
+        prova, mas tenho certeza de que estar familiarizado com essas
+        operações elementares ao ponto de ler um código e entender o que ele faz
+        com a lista, \emph{faz parte} de um bom preparo. Enfase para o \emph{faz
+        parte}, porque ainda existe muito mais a ser explorado que eu não consigo
+        trazer aqui neste pequeno documento. Sem mais delongas, bons estudos,
+        e qualquer dúvida me chamem no zap, eu tenho o gabarito."}
+    \begin{flushright}
+        \textit{-O Monitor}
+    \end{flushright}
+
+    \section*{Identificar operações}
+
+    Eu andei programando um pouco esses dias e implementei uma lista
+    simplesmente encadeada e algumas operações para mexer com ela. Vou colocar
+    alguns dos códigos das funções para vocês identificarem o que cada função
+    faz. Já vou dizendo que há algumas que não funcionam para todos os casos,
+    fiquem atentos a isso também e identifiquem as que não funcionam para
+    qualquer caso. E o principal: \textbf{todas possuem um
+    significado, não são operações aleatórias}.
+
+    Para todas as funções, eu utilizei essa declaração de Lista/Nó. A lista no
+    caso é um ponteiro para o primeiro Nó.
+
+\begin{tcolorbox}
+    \begin{verbatim}
+// Declaração da Lista
+typedef struct No {
+    int info;
+    struct No *prox;
+} No;
+    \end{verbatim}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}
+    \begin{verbatim}
+// Função A
+No* funcaoA() {
+    return NULL;
+}
+
+// Exemplo de uso
+int main() {
+    No* lista = funcaoA()
+    ...
+}
+    \end{verbatim}
+\end{tcolorbox}
+
+
+Sobre a próxima função, por que eu usei \verb|No** plista| e não \verb|No* lista|?
+Eu poderia fazer do segundo jeito?
+\begin{tcolorbox}
+    \begin{verbatim}
+// Função B
+void funcaoB(No** plista, int v) {    
+    No* n = (No*) malloc(sizeof(No));
+    n->info = v;
+    n->prox = (*plista);
+    (*plista) = n;
+}
+
+// Exemplo de uso
+int main () {
+    No *lista = funcaoA();
+    funcaoB(&lista, 4);
+    funcaoB(&lista, 12);
+    ...
+}
+    \end{verbatim}
+\end{tcolorbox}
+
+As funções $C_a$ e $C_b$ pretendem fazer a mesma coisa, mas de maneiras
+diferentes. Ambas funcionam? Qual a diferença entre elas? 
+\begin{tcolorbox}
+    \begin{verbatim}
+// Função Ca
+void funcaoCa(No* lista) {
+    No* aux = lista;
+    while (aux != NULL) {
+        printf("(%d)->", aux->info);
+        aux = aux->prox;
+    }
+    printf("NULL\n");
+}
+    \end{verbatim}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}
+    \begin{verbatim}
+// Função Cb
+void funcaoCb(No* lista) {
+    while (lista != NULL) {
+        printf("(%d)->", lista->info);
+        lista = lista->prox;
+    }
+    printf("NULL\n");
+}
+    \end{verbatim}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}
+    \begin{verbatim}
+// Função D
+void funcaoD(No **plista) {
+    No *aux = (*plista);
+    No *l = (*plista);
+
+    while (l != NULL) {
+        l = l->prox;
+        free(aux);
+        aux = l;
+    }
+    (*plista) = NULL;
+}
+    \end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    \begin{verbatim}
+// Função E
+void funcaoE(No **plista, int valor) {
+    No *n = (No*) malloc(sizeof(No));
+    n->info = valor;
+    
+    No *l = (*plista);
+    No *p = l->prox;
+
+    while (p != NULL && p->info < valor) {
+        l = l->prox;
+        p = p->prox;
+    }
+
+    n->prox = p;
+    l->prox = n;
+}
+    \end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    \begin{verbatim}
+// Função F
+void funcaoF(No* lista) {
+    No *a, *b;
+
+    int t = 1;
+    while (t) {
+        a = lista;
+        b = a->prox;
+        t = 0;
+        while (b != NULL) {
+            if (a->info > b->info) {
+                int aux = a->info;
+                a->info = b->info;
+                b->info = aux;
+                t = 1;
+            }
+            a = b;
+            b = b->prox;
+        }
+    }
+}
+    \end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    \begin{verbatim}
+// Função G
+void funcaoG(No **plista, int n, int l) {
+    for (int i=0; i<n; i++) {
+        funcaoB(plista, rand()%l);
+    }
+}
+    \end{verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+    \begin{verbatim}
+// Função H
+No* funcaoH(No *lista, int n) {
+    while (lista != NULL && lista->info != n) {
+        lista = lista->prox;
+    }
+    return lista;
+}
+    \end{verbatim}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}
+    \begin{verbatim}
+// Função Ia
+void funcaoIa(No** plista) {
+    No *a, *b, *c;
+    a = (*plista);
+    b = a->prox;
+    c = NULL;
+    while (a != NULL) {
+        a->prox = c;
+        c = a;
+        a = b;
+        if (b != NULL)
+            b = b->prox;
+    }
+    (*plista) = c;
+}
+    \end{verbatim}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}
+    \begin{verbatim}
+// Função Ib
+void funcaoIb(No** plista, No* a, No* b, No* c) {
+    a->prox = c;
+    c = a;
+    a = b;
+    if (b != NULL)
+        b = b->prox;
+
+    if (a != NULL) {
+        funcaoIb(plista, a, b, c);
+    } else {
+        (*plista) = c;
+    }
+}
+
+// Exemplo de uso
+int main() {
+    ...
+    No* lista = funcaoA();
+    funcaoG(&lista, 20, 10);
+    funcaoIb(&lista, lista, lista->prox, NULL);
+}
+    \end{verbatim}
+\end{tcolorbox}
+
+
+\end{document}
+
